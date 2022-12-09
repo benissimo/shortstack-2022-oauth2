@@ -23,4 +23,19 @@ If CSRF was possible, the attacker could integrate their own paypal account with
     D(Authorization Server);
 ```
 
-#### Fix
+```mermaid
+    sequenceDiagram
+    participant Client Application
+    participant Attack Server
+
+    participant Authorization Server
+
+    Client Application->>Authorization Server: /authorize? redirect_uri=https://example.com.attacker.com/callback
+    Authorization Server->>Attack Server: HTTP 302\n https://example.com.attacker.com/callback/#access_token=eyJOe...
+```
+
+## Demo - Compromised Authorization Code
+
+If following along with the presentation:
+
+`docker-compose up`

@@ -19,10 +19,6 @@ Unordered list of different OAuth 2 Flows
 - Assumes **Resource Owner** and **Public Client** are on the same device
 - Most vulnerable to security threats
 
-### Requirements
-
-### Flow
-
 ## Authorization Code Flow (3-Legged OAuth)
 
 ![oauth-the-dog](./assets/oauth-the-dog.png)

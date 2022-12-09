@@ -25,7 +25,7 @@ with open("private.pem", "rb") as file:
 
 def authenticate_user_credentials(username, password):
     """Authenticate credentials"""
-    if username == "test" and password == "test":
+    if username == "shortstack" and password == "shortstack":
         return True
 
     return False

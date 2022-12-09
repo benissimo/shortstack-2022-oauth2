@@ -12,4 +12,4 @@ RUN pip install -r requirements.txt
 EXPOSE 5051
 COPY ./src/authorization_server .
 
-CMD ["flask", "run"]
+CMD ["python3", "authorization_server.py"]

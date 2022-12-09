@@ -6,13 +6,13 @@ import requests
 
 from flask import Flask, make_response, render_template, redirect, request, url_for
 
-REDIRECT_URL = "http://localhost:5050/callback"
-AUTH_PATH = "http://localhost:5051/auth"
-TOKEN_PATH = "http://localhost:5051/token"
-RES_PATH = "http://localhost:5052/users"
+REDIRECT_URL = "http://127.0.0.1:5050/callback"
+AUTH_PATH = "http://127.0.0.1:5051/auth"
+TOKEN_PATH = "http://127.0.0.1:5051/token"
+RES_PATH = "http://127.0.0.1:5052/users"
 
-CLIENT_ID = "sample-client-id"
-CLIENT_SECRET = "sample-client-secret"
+CLIENT_ID = "shortstack"
+CLIENT_SECRET = "shortstack"
 
 app = Flask(__name__)
 

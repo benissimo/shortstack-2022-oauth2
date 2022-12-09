@@ -3,17 +3,20 @@ services:
     build:
       context: .
       dockerfile: ./docker/client/Dockerfile
+    network_mode: host
     ports:
       - "5050:5050"
   shortstack-authorization-server:
     build:
       context: .
       dockerfile: ./docker/authorization-server/Dockerfile
+    network_mode: host
     ports:
       - "5051:5051"
   shortstack-api-server:
     build:
       context: .
       dockerfile: ./docker/api-server/Dockerfile
+    network_mode: host
     ports:
       - "5052:5052"

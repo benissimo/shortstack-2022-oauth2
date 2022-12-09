@@ -12,4 +12,4 @@ RUN pip install -r requirements.txt
 EXPOSE 5052
 COPY ./src/api_server .
 
-CMD ["flask", "run"]
+CMD ["python3", "api_server.py"]

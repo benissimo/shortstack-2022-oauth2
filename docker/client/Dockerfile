@@ -12,5 +12,4 @@ RUN pip install -r requirements.txt
 EXPOSE 5050
 COPY ./src/client .
 
-# CMD ["flask", "run"]
 CMD ["python3", "client.py"]

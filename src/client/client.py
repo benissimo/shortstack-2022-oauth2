@@ -2,8 +2,6 @@
 import json
 import requests
 
-# import ssl
-
 from flask import Flask, make_response, render_template, redirect, request, url_for
 
 REDIRECT_URL = "http://127.0.0.1:5050/callback"
@@ -24,7 +22,7 @@ def before_request():
     if request.endpoint not in ["login", "callback"]:
         access_token = request.cookies.get("access_token")
         if access_token:
-            return None  # formerly "pass", double check functionality
+            return None
 
         return redirect(url_for("login"))
 
@@ -101,8 +99,4 @@ def callback():
 
 
 if __name__ == "__main__":
-    # context = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
-    # context.load_cert_chain('domain.crt', 'domain.key')
-    # app.run(port = 5000, debug = True, ssl_context = context)
-    # app.run(port = 5000, debug = True, host='0.0.0.0')
     app.run(port=5050, host="0.0.0.0")

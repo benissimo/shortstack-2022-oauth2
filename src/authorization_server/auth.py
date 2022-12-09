@@ -2,13 +2,10 @@
 import base64
 import json
 import time
-import secrets
 import jwt
-import cryptography
 
 from cryptography.fernet import Fernet
 
-# KEY = Fernet.generate_key()
 KEY = b"YHD1m3rq3K-x6RxT1MtuGzvyLz4EWIJAEkRtBRycDHA="
 
 ISSUER = "sample-auth-server"
@@ -52,7 +49,6 @@ def generate_access_token():
 
 def generate_authorization_code(client_id, redirect_url):
     """Generate authorization code"""
-    # f = Fernet(KEY)
     authorization_code = f.encrypt(
         json.dumps(
             {
@@ -79,7 +75,6 @@ def generate_authorization_code(client_id, redirect_url):
 
 def verify_authorization_code(authorization_code, client_id, redirect_url):
     """Verify authorization code"""
-    # f = Fernet(KEY)
     record = authorization_codes.get(authorization_code)
     if not record:
         return False

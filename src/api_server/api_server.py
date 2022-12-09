@@ -1,14 +1,10 @@
 """API Server"""
 import json
 
-# import ssl
-import logging
 from flask import Flask, request
 from auth import verify_access_token
 
 app = Flask(__name__)
-
-logger = logging.getLogger(__name__)
 
 
 @app.before_request
@@ -17,7 +13,6 @@ def before_request():
 
     auth_header = request.headers.get("Authorization")
     print("Auth header: ", auth_header, flush=True)
-    # logger.info("Auth Header: ", auth_header)
 
     if "Bearer" not in auth_header:
         return json.dumps({"error": "Access token does not exist."}), 400

@@ -25,7 +25,7 @@ Now recommended in OAuth 2.0 RFC
 - Client must validate that the "state" parameter that was sent equals the "state" parameter that is stored locally in the user agent.
 - If state parameters don't match, client should exit the flow.
 
-## Good Hygeine
+## Good Hygiene
 
 ### Don't Run Containers as Root
 

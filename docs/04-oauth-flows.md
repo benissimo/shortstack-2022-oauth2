@@ -69,6 +69,17 @@ Application exchanges the authorization code for an access token
 
 ### Authorization Code PKCE
 
+PKCE extends the Oauth 2.0 framework, and adds additional security and allows public clients to perform the authorization code flow
+
+PKCE RFC: <https://tools.ietf.org/html/rfc7636>
+
+- Access token Is never placed in a URL
+- Access Token can be concealed from user agent
+- Confidential Clients identify themselves with a Client Secret
+
+- Let's public clients use the Authorization Code flow rather than the implicit flow, even though they can't secure a client secret
+- Mitigates the impact of a compromised Authorization Code by a malicious actor
+
 #### Requirements
 
 #### Flow
@@ -81,17 +92,17 @@ Application exchanges the authorization code for an access token
     participant Secure Token Service
     participant API
 
-    User->>Mobile App: Click login link
+    User->>Client Application: Click login link
 
     loop challenge
-    User->>Mobile App: Generate code verifier and code challenge
+    User->>Client Application: Generate code verifier and code challenge
     end
 
-    Mobile App->>Secure Token Service: Authorization code request and code challenge to authorize
+    Client Application->>Secure Token Service: Authorization code request and code challenge to authorize
     Secure Token Service->>User: Redirect to login/authorization prompt
     User->>Secure Token Service: Authenticate and consent
-    Secure Token Service->>Mobile App: Authorize code
-    Mobile App->>Secure Token Service: Authorization code and code verified to OAuth token
+    Secure Token Service->>Client Application: Authorize code
+    Client Application->>Secure Token Service: Authorization code and code verified to OAuth token
 
     loop validate
     Secure Token Service->Secure Token Service: Validate code verifier and challenge

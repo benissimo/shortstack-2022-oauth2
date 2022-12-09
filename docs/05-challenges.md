@@ -38,6 +38,10 @@ Attacker can impersonate the **Client Application**
 
 ### OWASP
 
+![OWASP](./assets/owasp.png)
+
+<https://owasp.org/www-project-web-security-testing-guide/>
+
 ### Supply Chain
 
 ```mermaid

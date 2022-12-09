@@ -14,8 +14,6 @@
 - OAuth removes the requirement for Users to give Website A secret information about Website B
 - Allows the **User** to grant private access to resources on one site (**Service Provider**) to another site (**Consumer**)
 
-## OAuth 1.0 vs 2.0
-
 ## OpenID vs OAuth
 
 - OpenID - Single Identity to sign on to many sites (SSO)

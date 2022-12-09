@@ -1,0 +1,26 @@
+# see editorconfig.org for details
+
+# From stratis-api-server
+
+# specifies this file as the top-most editorconfig and will not search any higher
+# root = true
+
+# [*]
+# charset = utf-8
+# end_of_line = lf
+# insert_final_newline = true
+
+# [*.{py,proto}]
+# indent_style = space
+# indent_size = 4
+
+# [*.py]
+# max_line_length = 120
+
+# [Makefile]
+# indent_style = tab
+# indent_size = 4
+
+# [*.{js,jsx,json,ts,tsx,yaml,yml}]
+# indent_style = space
+# indent_size = 2
